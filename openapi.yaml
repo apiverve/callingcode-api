@@ -1,32 +1,38 @@
 openapi: 3.0.4
 info:
   title: Country Calling Code
-  description: Country Calling Code is a simple tool for getting the country's international dialing codes. It returns the country's international dialing codes.
+  description: >-
+    Country Calling Code is a simple tool for getting the country's
+    international dialing codes. It returns the country's international dialing
+    codes.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
     email: hello@apiverve.com
     url: https://apiverve.com/contact
-  version: 1.0.9
+  version: 1.0.0
 externalDocs:
   description: Learn more about APIVerve
   url: https://docs.apiverve.com?utm_source=openapi
 servers:
-- url: https://api.apiverve.com/
+  - url: https://api.apiverve.com/
 paths:
   /v1/callingcode:
     get:
       summary: Get Country Calling Code
-      description: Country Calling Code is a simple tool for getting the country's international dialing codes. It returns the country's international dialing codes.
+      description: >-
+        Country Calling Code is a simple tool for getting the country's
+        international dialing codes. It returns the country's international
+        dialing codes.
       operationId: callingcode
       parameters:
-      - name: country
-        in: query
-        schema:
-          type: string
-        required: true
-        description: The 2 letter ISO code for the country (e.g. FR)
-        example: FR
+        - name: country
+          in: query
+          schema:
+            type: string
+          required: true
+          description: The 2 letter ISO code for the country (e.g. FR)
+          example: FR
       responses:
         '200':
           description: Successful Response
@@ -42,23 +48,23 @@ paths:
                     type: string
                     description: error
                   data:
-                    type: string
+                    type: object
                     description: data
               example:
                 status: ok
-                error: 
+                error: null
                 data:
                   country: France
                   officialName: French Republic
                   countryCode: FR
                   callingcodes:
-                  - '+33'
+                    - '+33'
         '401':
           description: Your request was not authorized, or your API Key was invalid
         '404':
           description: Requested resource was not found
         '500':
-          description: A server error has occured, try again later
+          description: A server error has occurred, try again later
 components:
   securitySchemes:
     api_key:
@@ -66,4 +72,4 @@ components:
       name: x-api-key
       in: header
 security:
-- api_key: []
+  - api_key: []
