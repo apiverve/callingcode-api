@@ -12,7 +12,6 @@ namespace APIVerve.API.CountryCallingCode
     {
         /// <summary>
         /// The 2 letter ISO code for the country (e.g. FR)
-        /// Example: FR
         /// </summary>
         [JsonProperty("country")]
         public string Country { get; set; }
