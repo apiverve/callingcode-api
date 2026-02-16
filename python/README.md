@@ -221,8 +221,9 @@ from apiverve_countrycallingcode.apiClient import CallingcodeAPIClient
 
 api = CallingcodeAPIClient("[YOUR_API_KEY]")
 
+query = { "country": "FR" }
+
 try:
-    query = { "country": "FR" }
     result = api.execute(query)
     print(result)
 finally:
