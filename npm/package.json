@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/callingcode",
-  "version": "1.1.13",
+  "version": "1.1.14",
   "description": "Country Calling Code is a simple tool for getting the country's international dialing codes. It returns the country's international dialing codes.",
   "main": "index.js",
   "types": "index.d.ts",
