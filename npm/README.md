@@ -127,7 +127,9 @@ async function makeRequest() {
     "countryCode": "FR",
     "callingcodes": [
       "+33"
-    ]
+    ],
+    "region": "Europe",
+    "subregion": "Western Europe"
   }
 }
 ```
