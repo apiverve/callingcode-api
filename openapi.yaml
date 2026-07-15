@@ -59,6 +59,8 @@ paths:
                   countryCode: FR
                   callingcodes:
                     - '+33'
+                  region: Europe
+                  subregion: Western Europe
         '401':
           description: Your request was not authorized, or your API Key was invalid
         '404':
