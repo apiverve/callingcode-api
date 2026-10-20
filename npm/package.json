@@ -1,7 +1,7 @@
 {
   "name": "@apiverve/callingcode",
-  "version": "1.2.0",
-  "description": "Country Calling Code is a simple tool for getting the country's international dialing codes. It returns the country's international dialing codes.",
+  "version": "1.2.2",
+  "description": "Country Calling Code is a phone number country code API that looks up international dialing codes and official names from a two-letter ISO country code. It returns an array of calling prefixes and standard country identifiers.",
   "main": "index.js",
   "types": "index.d.ts",
   "sideEffects": false,
@@ -23,7 +23,7 @@
     "directory": "npm"
   },
   "keywords": [
-    "country calling code", "country calling code api", "country calling code tool", "country calling code software", "country calling code service"
+    "country code api", "phone number country code api", "country phone code api", "country calling code api", "international dialing code"
   ],
   "author": {
     "name": "APIVerve",
@@ -34,7 +34,7 @@
   "bugs": {
     "url": "https://github.com/apiverve/callingcode-api/issues"
   },
-  "homepage": "https://apiverve.com/marketplace/callingcode?utm_source=npm&utm_medium=homepage",
+  "homepage": "https://apiverve.com/marketplace/callingcode?utm_source=npm&utm_medium=referral&utm_content=homepage",
   "devDependencies": {
     "mocha": "^11.0.1",
     "chai": "^5.1.2",
