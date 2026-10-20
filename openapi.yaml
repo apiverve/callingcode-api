@@ -2,9 +2,10 @@ openapi: 3.0.4
 info:
   title: Country Calling Code
   description: >-
-    Country Calling Code is a simple tool for getting the country's
-    international dialing codes. It returns the country's international dialing
-    codes.
+    Country Calling Code is a phone number country code API that looks up
+    international dialing codes and official names from a two-letter ISO country
+    code. It returns an array of calling prefixes and standard country
+    identifiers.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
@@ -19,7 +20,7 @@ servers:
 paths:
   /v1/callingcode:
     get:
-      summary: Get Country Calling Code
+      summary: Country Calling Code
       description: >-
         Country Calling Code is a simple tool for getting the country's
         international dialing codes. It returns the country's international

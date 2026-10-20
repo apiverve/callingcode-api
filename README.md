@@ -1,13 +1,13 @@
-# [Country Calling Code API](https://apiverve.com/marketplace/callingcode?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+# [Country Calling Code API](https://apiverve.com/marketplace/callingcode?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 
-Country Calling Code is a simple tool for getting the country&#x27;s international dialing codes. It returns the country&#x27;s international dialing codes.
+Country Calling Code is a phone number country code API that looks up international dialing codes and official names from a two-letter ISO country code. It returns an array of calling prefixes and standard country identifiers.
 
 The Country Calling Code API provides a simple, reliable way to integrate country calling code functionality into your applications. Built for developers who need production-ready country calling code capabilities without the complexity of building from scratch.
 
-**[View API Details →](https://apiverve.com/marketplace/callingcode?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)**
+**[View API Details →](https://apiverve.com/marketplace/callingcode?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/callingcode?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/callingcode?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 [![Method](https://img.shields.io/badge/Method-GET-blue.svg)](#)
 [![Platform](https://img.shields.io/badge/Platform-Multi--Platform-orange.svg)](#installation)
 
@@ -161,7 +161,7 @@ go get github.com/apiverve/callingcode-api/go
 
 ## Documentation
 
-- 🏠 **API Home:** [Country Calling Code API](https://apiverve.com/marketplace/callingcode?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home:** [Country Calling Code API](https://apiverve.com/marketplace/callingcode?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 📚 **API Reference:** [docs.apiverve.com/ref/callingcode](https://docs.apiverve.com/ref/callingcode)
 - 📖 **OpenAPI Spec:** [openapi.yaml](./openapi.yaml)
 - 💡 **Examples:** [examples/](./examples/)
@@ -227,7 +227,7 @@ A real response from the Country Calling Code API:
 
 ## Support & Community
 
-- 🏠 **API Home**: [Country Calling Code API](https://apiverve.com/marketplace/callingcode?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home**: [Country Calling Code API](https://apiverve.com/marketplace/callingcode?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 💬 **Support**: [https://apiverve.com/contact](https://apiverve.com/contact)
 - 🐛 **Issues**: [GitHub Issues](../../issues)
 - 📖 **Documentation**: [https://docs.apiverve.com](https://docs.apiverve.com)
