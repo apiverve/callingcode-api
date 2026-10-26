@@ -46,7 +46,7 @@ final _formatPatterns = {
 
 /// Country Calling Code API client.
 ///
-/// For more information, visit: https://apiverve.com/marketplace/callingcode?utm_source=dart&utm_medium=readme
+/// For more information, visit: https://apiverve.com/marketplace/callingcode?utm_source=dart&utm_medium=referral&utm_content=readme
 ///
 /// Parameters:
 /// * [country] (required) - The 2 letter ISO code for the country (e.g. FR) [minLength: 2, maxLength: 2]
