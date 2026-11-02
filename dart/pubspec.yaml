@@ -1,6 +1,6 @@
 name: apiverve_callingcode
 description: "Country Calling Code is a phone number country code API that looks up international dialing codes and official names from a two-letter ISO country code. It returns an array of calling prefixes and standard country identifiers."
-version: 1.2.3
+version: 1.2.4
 homepage: https://apiverve.com/marketplace/callingcode?utm_source=dart&utm_medium=referral&utm_content=homepage
 repository: https://github.com/apiverve/callingcode-api/tree/main/dart
 
