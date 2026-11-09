@@ -50,6 +50,7 @@ final _formatPatterns = {
 ///
 /// Parameters:
 /// * [country] (required) - The 2 letter ISO code for the country (e.g. FR) [minLength: 2, maxLength: 2]
+/// * [dialing] - Include the dialing block: the international prefix, and (paid plans) the national prefix, regions sharing the calling code, valid number lengths and example numbers
 class CallingcodeClient {
   final String apiKey;
   final String baseUrl;
@@ -58,6 +59,7 @@ class CallingcodeClient {
   /// Validation rules for parameters.
   static final Map<String, ValidationRule> _validationRules = <String, ValidationRule>{
     'country': ValidationRule(type: 'string', required: true, minLength: 2, maxLength: 2),
+    'dialing': ValidationRule(type: 'boolean', required: false),
   };
 
   CallingcodeClient(this.apiKey, {
