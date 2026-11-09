@@ -1,7 +1,7 @@
 Country Calling Code API
 ============
 
-Country Calling Code is a phone number country code API that looks up international dialing codes and official names from a two-letter ISO country code. It returns an array of calling prefixes and standard country identifiers.
+Country Calling Code is a phone number country code API that looks up international dialing codes and official names from a two-letter ISO country code. It returns an array of calling prefixes, standard country identifiers and, on request, the country's exit and trunk prefixes, other regions sharing its code, valid number lengths and example numbers by line type.
 
 
 [![PyPI version](https://img.shields.io/pypi/v/apiverve-countrycallingcode.svg)](https://pypi.org/project/apiverve-countrycallingcode/)
@@ -43,7 +43,10 @@ from apiverve_countrycallingcode.apiClient import CallingcodeAPIClient
 # Initialize the client with your APIVerve API key
 api = CallingcodeAPIClient("[YOUR_API_KEY]")
 
-query = { "country": "FR" }
+query = {
+    "country": "FR",
+    "dialing": true
+}
 
 try:
     # Make the API call
@@ -81,7 +84,10 @@ Using the API client, you can perform requests to the API.
 ###### Define Query
 
 ```python
-query = { "country": "FR" }
+query = {
+    "country": "FR",
+    "dialing": true
+}
 ```
 
 ###### Simple Request
@@ -108,7 +114,40 @@ print(result)
       "+33"
     ],
     "region": "Europe",
-    "subregion": "Western Europe"
+    "subregion": "Western Europe",
+    "dialing": {
+      "internationalPrefix": "00",
+      "nationalPrefix": "0",
+      "sharedWith": [],
+      "possibleLengths": {
+        "fixedLine": [
+          9
+        ],
+        "mobile": [
+          9
+        ],
+        "tollFree": [
+          9
+        ]
+      },
+      "exampleNumbers": {
+        "fixedLine": {
+          "international": "+33 1 23 45 67 89",
+          "national": "01 23 45 67 89",
+          "e164": "+33123456789"
+        },
+        "mobile": {
+          "international": "+33 6 12 34 56 78",
+          "national": "06 12 34 56 78",
+          "e164": "+33612345678"
+        },
+        "tollFree": {
+          "international": "+33 801 23 45 67",
+          "national": "0 801 23 45 67",
+          "e164": "+33801234567"
+        }
+      }
+    }
   }
 }
 ```
@@ -126,7 +165,10 @@ from apiverve_countrycallingcode.apiClient import CallingcodeAPIClient, Callingc
 
 api = CallingcodeAPIClient("[YOUR_API_KEY]")
 
-query = { "country": "FR" }
+query = {
+    "country": "FR",
+    "dialing": true
+}
 
 try:
     result = api.execute(query)
@@ -147,7 +189,10 @@ from apiverve_countrycallingcode.apiClient import CallingcodeAPIClient, Callingc
 
 api = CallingcodeAPIClient("[YOUR_API_KEY]")
 
-query = { "country": "FR" }
+query = {
+    "country": "FR",
+    "dialing": true
+}
 
 try:
     result = api.execute(query)
@@ -181,7 +226,10 @@ The client supports the context manager protocol for automatic resource cleanup:
 ```python
 from apiverve_countrycallingcode.apiClient import CallingcodeAPIClient, CallingcodeAPIClientError
 
-query = { "country": "FR" }
+query = {
+    "country": "FR",
+    "dialing": true
+}
 
 # Using context manager ensures proper cleanup
 with CallingcodeAPIClient("[YOUR_API_KEY]") as api:
@@ -207,7 +255,10 @@ from apiverve_countrycallingcode.apiClient import CallingcodeAPIClient
 # Enable debug mode
 api = CallingcodeAPIClient("[YOUR_API_KEY]", debug=True)
 
-query = { "country": "FR" }
+query = {
+    "country": "FR",
+    "dialing": true
+}
 
 # Debug information will be printed to console
 result = api.execute(query)
@@ -222,7 +273,10 @@ from apiverve_countrycallingcode.apiClient import CallingcodeAPIClient
 
 api = CallingcodeAPIClient("[YOUR_API_KEY]")
 
-query = { "country": "FR" }
+query = {
+    "country": "FR",
+    "dialing": true
+}
 
 try:
     result = api.execute(query)

@@ -24,7 +24,8 @@ class ValidationError(CallingcodeAPIClientError):
 class CallingcodeAPIClient:
     # Validation rules for parameters (generated from schema)
     VALIDATION_RULES = {
-        "country": {"type": "string", "required": True, "minLength": 2, "maxLength": 2}
+        "country": {"type": "string", "required": True, "minLength": 2, "maxLength": 2},
+        "dialing": {"type": "boolean", "required": False, "default": False}
     }
 
     # Format validation patterns
