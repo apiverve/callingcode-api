@@ -1,6 +1,6 @@
 # Country Calling Code API - Ruby Gem
 
-Country Calling Code is a phone number country code API that looks up international dialing codes and official names from a two-letter ISO country code. It returns an array of calling prefixes and standard country identifiers.
+Country Calling Code is a phone number country code API that looks up international dialing codes and official names from a two-letter ISO country code. It returns an array of calling prefixes, standard country identifiers and, on request, the country's exit and trunk prefixes, other regions sharing its code, valid number lengths and example numbers by line type.
 
 ## Installation
 
@@ -35,7 +35,10 @@ require 'apiverve_callingcode'
 client = APIVerve::Callingcode::Client.new(api_key: "YOUR_API_KEY")
 
 # Make a request
-response = client.execute({ country: "FR" })
+response = client.execute({
+  country: "FR",
+  dialing: true
+})
 
 # Print the response
 puts response
@@ -46,7 +49,7 @@ puts response
 
 ```ruby
 begin
-  response = client.execute({ country: "FR" })
+  response = client.execute({ country: "FR", dialing: true })
   puts response["data"]
 rescue APIVerve::Callingcode::ValidationError => e
   puts "Validation error: #{e.errors.join(', ')}"
@@ -80,7 +83,40 @@ client = APIVerve::Callingcode::Client.new(
       "+33"
     ],
     "region": "Europe",
-    "subregion": "Western Europe"
+    "subregion": "Western Europe",
+    "dialing": {
+      "internationalPrefix": "00",
+      "nationalPrefix": "0",
+      "sharedWith": [],
+      "possibleLengths": {
+        "fixedLine": [
+          9
+        ],
+        "mobile": [
+          9
+        ],
+        "tollFree": [
+          9
+        ]
+      },
+      "exampleNumbers": {
+        "fixedLine": {
+          "international": "+33 1 23 45 67 89",
+          "national": "01 23 45 67 89",
+          "e164": "+33123456789"
+        },
+        "mobile": {
+          "international": "+33 6 12 34 56 78",
+          "national": "06 12 34 56 78",
+          "e164": "+33612345678"
+        },
+        "tollFree": {
+          "international": "+33 801 23 45 67",
+          "national": "0 801 23 45 67",
+          "e164": "+33801234567"
+        }
+      }
+    }
   }
 }
 ```
