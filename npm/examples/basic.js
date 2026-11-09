@@ -15,7 +15,8 @@ const api = new callingcodeAPI({
 
 // Example query
 var query = {
-  country: "FR"
+  country: "FR",
+  dialing: false
 };
 
 // Make the API request using callback

@@ -31,6 +31,33 @@ declare module '@apiverve/callingcode' {
       callingcodes: (null | string)[];
       region:       null | string;
       subregion:    null | string;
+      dialing:      Dialing;
+  }
+  
+  interface Dialing {
+      internationalPrefix: null | string;
+      nationalPrefix:      null | string;
+      sharedWith:          any[];
+      possibleLengths:     PossibleLengths;
+      exampleNumbers:      ExampleNumbers;
+  }
+  
+  interface ExampleNumbers {
+      fixedLine: FixedLine;
+      mobile:    FixedLine;
+      tollFree:  FixedLine;
+  }
+  
+  interface FixedLine {
+      international: null | string;
+      national:      null | string;
+      e164:          null | string;
+  }
+  
+  interface PossibleLengths {
+      fixedLine: (number | null)[];
+      mobile:    (number | null)[];
+      tollFree:  (number | null)[];
   }
 
   export default class callingcodeWrapper {

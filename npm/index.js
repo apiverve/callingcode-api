@@ -30,7 +30,7 @@ class callingcodeWrapper {
         this.baseURL = 'https://api.apiverve.com/v1/callingcode';
 
         // Validation rules for parameters (generated from schema)
-        this.validationRules = {"country":{"type":"string","required":true,"minLength":2,"maxLength":2}};
+        this.validationRules = {"country":{"type":"string","required":true,"minLength":2,"maxLength":2},"dialing":{"type":"boolean","required":false,"default":false}};
     }
 
     /**

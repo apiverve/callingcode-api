@@ -1,7 +1,7 @@
 {
   "name": "@apiverve/callingcode",
-  "version": "1.2.4",
-  "description": "Country Calling Code is a phone number country code API that looks up international dialing codes and official names from a two-letter ISO country code. It returns an array of calling prefixes and standard country identifiers.",
+  "version": "1.2.5",
+  "description": "Country Calling Code is a phone number country code API that looks up international dialing codes and official names from a two-letter ISO country code. It returns an array of calling prefixes, standard country identifiers and, on request, the country's exit and trunk prefixes, other regions sharing its code, valid number lengths and example numbers by line type.",
   "main": "index.js",
   "types": "index.d.ts",
   "sideEffects": false,
