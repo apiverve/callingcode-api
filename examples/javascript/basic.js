@@ -15,7 +15,8 @@ async function callCountryCallingCodeAPI() {
   try {
     // Query parameters
     const params &#x3D; new URLSearchParams({
-            country: &#x27;FR&#x27;
+            country: &#x27;FR&#x27;,
+            dialing: true
         });
 
     const response = await fetch(`${API_URL}?${params}`, {

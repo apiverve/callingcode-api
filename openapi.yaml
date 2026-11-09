@@ -4,8 +4,9 @@ info:
   description: >-
     Country Calling Code is a phone number country code API that looks up
     international dialing codes and official names from a two-letter ISO country
-    code. It returns an array of calling prefixes and standard country
-    identifiers.
+    code. It returns an array of calling prefixes, standard country identifiers
+    and, on request, the country's exit and trunk prefixes, other regions
+    sharing its code, valid number lengths and example numbers by line type.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
@@ -24,7 +25,8 @@ paths:
       description: >-
         Country Calling Code is a simple tool for getting the country's
         international dialing codes. It returns the country's international
-        dialing codes.
+        dialing codes and, with dialing=true, its exit and trunk prefixes,
+        shared-code regions, valid number lengths and example numbers.
       operationId: callingcode
       parameters:
         - name: country
@@ -34,6 +36,16 @@ paths:
           required: true
           description: The 2 letter ISO code for the country (e.g. FR)
           example: FR
+        - name: dialing
+          in: query
+          schema:
+            type: boolean
+          required: false
+          description: >-
+            Include the dialing block: the international prefix, and (paid
+            plans) the national prefix, regions sharing the calling code, valid
+            number lengths and example numbers
+          example: true
       responses:
         '200':
           description: Successful Response
@@ -62,6 +74,30 @@ paths:
                     - '+33'
                   region: Europe
                   subregion: Western Europe
+                  dialing:
+                    internationalPrefix: '00'
+                    nationalPrefix: '0'
+                    sharedWith: []
+                    possibleLengths:
+                      fixedLine:
+                        - 9
+                      mobile:
+                        - 9
+                      tollFree:
+                        - 9
+                    exampleNumbers:
+                      fixedLine:
+                        international: +33 1 23 45 67 89
+                        national: 01 23 45 67 89
+                        e164: '+33123456789'
+                      mobile:
+                        international: +33 6 12 34 56 78
+                        national: 06 12 34 56 78
+                        e164: '+33612345678'
+                      tollFree:
+                        international: +33 801 23 45 67
+                        national: 0 801 23 45 67
+                        e164: '+33801234567'
         '401':
           description: Your request was not authorized, or your API Key was invalid
         '404':

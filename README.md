@@ -1,6 +1,6 @@
 # [Country Calling Code API](https://apiverve.com/marketplace/callingcode?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 
-Country Calling Code is a phone number country code API that looks up international dialing codes and official names from a two-letter ISO country code. It returns an array of calling prefixes and standard country identifiers.
+Country Calling Code is a phone number country code API that looks up international dialing codes and official names from a two-letter ISO country code. It returns an array of calling prefixes, standard country identifiers and, on request, the country&#x27;s exit and trunk prefixes, other regions sharing its code, valid number lengths and example numbers by line type.
 
 The Country Calling Code API provides a simple, reliable way to integrate country calling code functionality into your applications. Built for developers who need production-ready country calling code capabilities without the complexity of building from scratch.
 
@@ -31,7 +31,8 @@ The Country Calling Code API provides a simple, reliable way to integrate countr
 async function callCountryCallingCodeAPI() {
     try {
         const params = new URLSearchParams({
-            country: 'FR'
+            country: 'FR',
+            dialing: true
         });
 
         const response = await fetch(`https://api.apiverve.com/v1/callingcode?${params}`, {
@@ -54,7 +55,7 @@ callCountryCallingCodeAPI();
 ### Using cURL
 
 ```bash
-curl -X GET "https://api.apiverve.com/v1/callingcode?country=FR" \
+curl -X GET "https://api.apiverve.com/v1/callingcode?country=FR&dialing=true" \
   -H "x-api-key: YOUR_API_KEY_HERE"
 ```
 
@@ -218,7 +219,40 @@ A real response from the Country Calling Code API:
       "+33"
     ],
     "region": "Europe",
-    "subregion": "Western Europe"
+    "subregion": "Western Europe",
+    "dialing": {
+      "internationalPrefix": "00",
+      "nationalPrefix": "0",
+      "sharedWith": [],
+      "possibleLengths": {
+        "fixedLine": [
+          9
+        ],
+        "mobile": [
+          9
+        ],
+        "tollFree": [
+          9
+        ]
+      },
+      "exampleNumbers": {
+        "fixedLine": {
+          "international": "+33 1 23 45 67 89",
+          "national": "01 23 45 67 89",
+          "e164": "+33123456789"
+        },
+        "mobile": {
+          "international": "+33 6 12 34 56 78",
+          "national": "06 12 34 56 78",
+          "e164": "+33612345678"
+        },
+        "tollFree": {
+          "international": "+33 801 23 45 67",
+          "national": "0 801 23 45 67",
+          "e164": "+33801234567"
+        }
+      }
+    }
   }
 }
 ```

@@ -18,7 +18,7 @@ def call_callingcode_api():
     """
     try:
         # Query parameters
-        params &#x3D; {&#x27;country&#x27;: &#x27;FR&#x27;}
+        params &#x3D; {&#x27;country&#x27;: &#x27;FR&#x27;, &#x27;dialing&#x27;: true}
 
         headers = {
             'x-api-key': API_KEY
