@@ -49,6 +49,63 @@ namespace APIVerve.API.CountryCallingCode
 
         [JsonProperty("subregion")]
         public string Subregion { get; set; }
+
+        [JsonProperty("dialing")]
+        public Dialing Dialing { get; set; }
+    }
+
+    public partial class Dialing
+    {
+        [JsonProperty("internationalPrefix")]
+        public string InternationalPrefix { get; set; }
+
+        [JsonProperty("nationalPrefix")]
+        public long? NationalPrefix { get; set; }
+
+        [JsonProperty("sharedWith")]
+        public object[] SharedWith { get; set; }
+
+        [JsonProperty("possibleLengths")]
+        public PossibleLengths PossibleLengths { get; set; }
+
+        [JsonProperty("exampleNumbers")]
+        public ExampleNumbers ExampleNumbers { get; set; }
+    }
+
+    public partial class ExampleNumbers
+    {
+        [JsonProperty("fixedLine")]
+        public FixedLine FixedLine { get; set; }
+
+        [JsonProperty("mobile")]
+        public FixedLine Mobile { get; set; }
+
+        [JsonProperty("tollFree")]
+        public FixedLine TollFree { get; set; }
+    }
+
+    public partial class FixedLine
+    {
+        [JsonProperty("international")]
+        public string International { get; set; }
+
+        [JsonProperty("national")]
+        public string National { get; set; }
+
+        [JsonProperty("e164")]
+        public string E164 { get; set; }
+    }
+
+    public partial class PossibleLengths
+    {
+        [JsonProperty("fixedLine")]
+        public long?[] FixedLine { get; set; }
+
+        [JsonProperty("mobile")]
+        public long?[] Mobile { get; set; }
+
+        [JsonProperty("tollFree")]
+        public long?[] TollFree { get; set; }
     }
 
     public partial class Premium

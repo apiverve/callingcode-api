@@ -15,5 +15,11 @@ namespace APIVerve.API.CountryCallingCode
         /// </summary>
         [JsonProperty("country")]
         public string Country { get; set; }
+
+        /// <summary>
+        /// Include the dialing block: the international prefix, and (paid plans) the national prefix, regions sharing the calling code, valid number lengths and example numbers
+        /// </summary>
+        [JsonProperty("dialing")]
+        public bool? Dialing { get; set; }
     }
 }

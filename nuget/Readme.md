@@ -1,7 +1,7 @@
 Country Calling Code API
 ============
 
-Country Calling Code is a phone number country code API that looks up international dialing codes and official names from a two-letter ISO country code. It returns an array of calling prefixes and standard country identifiers.
+Country Calling Code is a phone number country code API that looks up international dialing codes and official names from a two-letter ISO country code. It returns an array of calling prefixes, standard country identifiers and, on request, the country's exit and trunk prefixes, other regions sharing its code, valid number lengths and example numbers by line type.
 
 
 [![NuGet version](https://img.shields.io/nuget/v/APIVerve.API.CountryCallingCode.svg)](https://www.nuget.org/packages/APIVerve.API.CountryCallingCode)
@@ -60,7 +60,8 @@ class Program
         var apiClient = new CountryCallingCodeAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new CountryCallingCodeQueryOptions {
-            Country = "FR"
+            Country = "FR",
+            Dialing = true
         };
 
         // Make the API call
@@ -124,7 +125,8 @@ public class Example
         var apiClient = new CountryCallingCodeAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new CountryCallingCodeQueryOptions {
-            Country = "FR"
+            Country = "FR",
+            Dialing = true
         };
 
         var response = await apiClient.ExecuteAsync(queryOptions);
@@ -156,7 +158,8 @@ public class Example
         var apiClient = new CountryCallingCodeAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new CountryCallingCodeQueryOptions {
-            Country = "FR"
+            Country = "FR",
+            Dialing = true
         };
 
         var response = apiClient.Execute(queryOptions);
@@ -193,7 +196,8 @@ public class Example
         var apiClient = new CountryCallingCodeAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new CountryCallingCodeQueryOptions {
-            Country = "FR"
+            Country = "FR",
+            Dialing = true
         };
 
         try
@@ -249,7 +253,8 @@ public class Example
         apiClient.SetRetryDelay(2000);     // Wait 2 seconds between retries
 
         var queryOptions = new CountryCallingCodeQueryOptions {
-            Country = "FR"
+            Country = "FR",
+            Dialing = true
         };
 
         try
@@ -290,7 +295,8 @@ apiClient.AddCustomHeader("X-Custom-Header", "custom-value");
 apiClient.AddCustomHeader("X-Request-ID", Guid.NewGuid().ToString());
 
 var queryOptions = new CountryCallingCodeQueryOptions {
-    Country = "FR"
+    Country = "FR",
+    Dialing = true
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -316,7 +322,8 @@ apiClient.SetLogger(message =>
 });
 
 var queryOptions = new CountryCallingCodeQueryOptions {
-    Country = "FR"
+    Country = "FR",
+    Dialing = true
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -334,7 +341,8 @@ apiClient.SetMaxRetries(3);           // Retry up to 3 times (default: 0, max: 3
 apiClient.SetRetryDelay(1500);        // Wait 1.5 seconds between retries (default: 1000ms)
 
 var queryOptions = new CountryCallingCodeQueryOptions {
-    Country = "FR"
+    Country = "FR",
+    Dialing = true
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -346,7 +354,8 @@ The API client implements `IDisposable` for proper resource cleanup:
 
 ```csharp
 var queryOptions = new CountryCallingCodeQueryOptions {
-    Country = "FR"
+    Country = "FR",
+    Dialing = true
 };
 
 using (var apiClient = new CountryCallingCodeAPIClient("[YOUR_API_KEY]"))
@@ -373,7 +382,40 @@ using (var apiClient = new CountryCallingCodeAPIClient("[YOUR_API_KEY]"))
       "+33"
     ],
     "region": "Europe",
-    "subregion": "Western Europe"
+    "subregion": "Western Europe",
+    "dialing": {
+      "internationalPrefix": "00",
+      "nationalPrefix": "0",
+      "sharedWith": [],
+      "possibleLengths": {
+        "fixedLine": [
+          9
+        ],
+        "mobile": [
+          9
+        ],
+        "tollFree": [
+          9
+        ]
+      },
+      "exampleNumbers": {
+        "fixedLine": {
+          "international": "+33 1 23 45 67 89",
+          "national": "01 23 45 67 89",
+          "e164": "+33123456789"
+        },
+        "mobile": {
+          "international": "+33 6 12 34 56 78",
+          "national": "06 12 34 56 78",
+          "e164": "+33612345678"
+        },
+        "tollFree": {
+          "international": "+33 801 23 45 67",
+          "national": "0 801 23 45 67",
+          "e164": "+33801234567"
+        }
+      }
+    }
   }
 }
 ```
