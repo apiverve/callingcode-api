@@ -15,7 +15,7 @@ use APIVerve\Callingcode\Exceptions\ValidationException;
  * @example Basic usage
  * ```php
  * $client = new Client('your_api_key');
- * $response = $client->execute(['country' => 'FR']);
+ * $response = $client->execute(['country' => 'FR', 'dialing' => true]);
  * print_r($response);
  * ```
  *
@@ -34,7 +34,8 @@ class Client
      * Validation rules for parameters
      */
     private const VALIDATION_RULES = [
-        'country' => ['type' => 'string', 'required' => true, 'minLength' => 2, 'maxLength' => 2]
+        'country' => ['type' => 'string', 'required' => true, 'minLength' => 2, 'maxLength' => 2],
+        'dialing' => ['type' => 'boolean', 'required' => false]
     ];
 
     /**

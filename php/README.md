@@ -1,6 +1,6 @@
 # Country Calling Code API - PHP Package
 
-Country Calling Code is a phone number country code API that looks up international dialing codes and official names from a two-letter ISO country code. It returns an array of calling prefixes and standard country identifiers.
+Country Calling Code is a phone number country code API that looks up international dialing codes and official names from a two-letter ISO country code. It returns an array of calling prefixes, standard country identifiers and, on request, the country's exit and trunk prefixes, other regions sharing its code, valid number lengths and example numbers by line type.
 
 ## Installation
 
@@ -27,7 +27,10 @@ use APIVerve\Callingcode\Client;
 $client = new Client('YOUR_API_KEY');
 
 // Make a request
-$response = $client->execute(['country' => 'FR']);
+$response = $client->execute([
+    'country' => 'FR',
+    'dialing' => true
+]);
 
 // Print the response
 print_r($response);
@@ -42,7 +45,7 @@ use APIVerve\Callingcode\Exceptions\APIException;
 use APIVerve\Callingcode\Exceptions\ValidationException;
 
 try {
-    $response = $client->execute(['country' => 'FR']);
+    $response = $client->execute(['country' => 'FR', 'dialing' => true]);
     print_r($response['data']);
 } catch (ValidationException $e) {
     echo "Validation error: " . implode(', ', $e->getErrors());
@@ -76,7 +79,40 @@ $client = new Client(
       "+33"
     ],
     "region": "Europe",
-    "subregion": "Western Europe"
+    "subregion": "Western Europe",
+    "dialing": {
+      "internationalPrefix": "00",
+      "nationalPrefix": "0",
+      "sharedWith": [],
+      "possibleLengths": {
+        "fixedLine": [
+          9
+        ],
+        "mobile": [
+          9
+        ],
+        "tollFree": [
+          9
+        ]
+      },
+      "exampleNumbers": {
+        "fixedLine": {
+          "international": "+33 1 23 45 67 89",
+          "national": "01 23 45 67 89",
+          "e164": "+33123456789"
+        },
+        "mobile": {
+          "international": "+33 6 12 34 56 78",
+          "national": "06 12 34 56 78",
+          "e164": "+33612345678"
+        },
+        "tollFree": {
+          "international": "+33 801 23 45 67",
+          "national": "0 801 23 45 67",
+          "e164": "+33801234567"
+        }
+      }
+    }
   }
 }
 ```
